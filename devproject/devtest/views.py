@@ -20,7 +20,7 @@ def signup(request):
     })
 
 def homepage(request):
-    if request.method == "POST" and request.user.is_authenticated():
+    if request.method == "POST" and request.user.is_authenticated:
         if request.POST["action"] == "add":
             add_email_form = AddEmailForm(request.POST, request.user)
             if add_email_form.is_valid():
